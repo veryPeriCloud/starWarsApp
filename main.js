@@ -5,7 +5,13 @@
     './episods-list.js',
     'https://swapi.dev/api/films',
     './style.css',
-  );
+  )
+  function preloader() {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hide-preloader');
+    preloader.classList.add('preloader-hidden');
+  }
+  preloader() ;
 
   window.addEventListener('popstate', () => {
     console.log('popstate');
@@ -16,13 +22,3 @@
     );
   })
 })();
-
-window.onload = function () {
-  const preloader = document.getElementById('preloader');
-
-  preloader.classList.add('hide-preloader');
-
-  setInterval(function () {
-    preloader.classList.add('preloader-hidden');
-  }, 1000);
-}
